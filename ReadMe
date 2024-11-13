@@ -1,0 +1,65 @@
+ ###Credit Risk Classification
+
+Overview
+
+The purpose of this analysis is to develop a model that can predict the creditworthiness of borrowers using historical lending data from a peer-to-peer lending service. This model aims to identify loans that are likely to default, helping the lending company make informed decisions and mitigate potential risks associated with high-risk loans.
+
+Data and Financial Information
+
+The dataset contains financial information related to borrowers' loan activities. Key features likely include variables that reflect borrowers’ financial stability, such as income, debt-to-income ratio, loan amount, and credit score, although specific feature names may vary.
+
+Target Variable
+The target variable is loan_status, which represents the health of each loan:
+
+0: Healthy loan (low risk of default).
+1: High-risk loan (higher likelihood of default).
+Basic Information on Target Variable
+The loan_status variable has the following distribution:
+
+0 (Healthy Loan): 75,036 instances
+1 (High-Risk Loan): 2,500 instances
+This distribution indicates an imbalanced dataset, with most loans classified as healthy, which could impact model training and require careful evaluation.
+
+Machine Learning Process
+
+The analysis followed these steps:
+
+Data Preparation: Loaded the dataset and split the data into features (X) and target labels (y). The dataset was divided into training and testing sets using train_test_split, with a set random state for reproducibility.
+Model Selection: A logistic regression model was chosen for this binary classification task due to its effectiveness with binary outcomes, computational efficiency, and interpretability.
+Model Training: The logistic regression model was trained on the training set (X_train, y_train) to identify patterns in the financial features associated with the loan statuses.
+Evaluation: The model was evaluated using the testing set (X_test, y_test). Key metrics, including accuracy, precision, recall, and a confusion matrix, were generated to assess model performance.
+Methods
+
+Logistic Regression: The logistic regression model calculates the probability of each class, making it effective for distinguishing between high-risk and healthy loans. This was an appropriate choice for our binary classification task.
+Results
+
+The logistic regression model’s performance on the test data is summarized below:
+
+Overall Accuracy: 0.99 (indicating that 99% of predictions were correct)
+Confusion Matrix:
+[[18682,    98],
+ [   39,   565]]
+Class 0 (Healthy Loan):
+Precision: 1.00
+Recall: 0.99
+F1-Score: 1.00
+Class 1 (High-Risk Loan):
+Precision: 0.85
+Recall: 0.94
+F1-Score: 0.89
+Macro Average:
+Precision: 0.93
+Recall: 0.97
+F1-Score: 0.94
+Weighted Average:
+Precision: 0.99
+Recall: 0.99
+F1-Score: 0.99
+These metrics indicate a high level of accuracy and balanced performance across both classes, with particularly strong recall for the high-risk loan class, which is essential for identifying potential defaults.
+
+Summary
+
+The logistic regression model achieved a high accuracy of 0.99, demonstrating excellent performance in predicting both healthy and high-risk loans. Its strong recall for high-risk loans (0.94) suggests that it effectively identifies potential defaults, which is valuable for the company’s risk management.
+
+Recommendation: This model is recommended for deployment due to its high accuracy, balanced precision, and recall scores. Given the importance of predicting high-risk loans accurately, the model’s high recall for this class makes it well-suited for practical use in identifying credit risk. If further improvement is desired, techniques like oversampling or using alternative algorithms could be explored to enhance performance further.
+
