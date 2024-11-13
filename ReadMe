@@ -61,5 +61,4 @@ Summary
 
 The logistic regression model achieved a high accuracy of 0.99, demonstrating excellent performance in predicting both healthy and high-risk loans. Its strong recall for high-risk loans (0.94) suggests that it effectively identifies potential defaults, which is valuable for the company’s risk management.
 
-Recommendation: This model is recommended for deployment due to its high accuracy, balanced precision, and recall scores. Given the importance of predicting high-risk loans accurately, the model’s high recall for this class makes it well-suited for practical use in identifying credit risk. If further improvement is desired, techniques like oversampling or using alternative algorithms could be explored to enhance performance further.
 
